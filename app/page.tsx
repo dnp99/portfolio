@@ -49,7 +49,7 @@ const projects = [
 ];
 
 function Arrow() {
-  return <span aria-hidden="true">&nearr;</span>;
+  return <span aria-hidden="true">{"\u2197"}</span>;
 }
 
 function ProjectVisual({ slug }: { slug: string }) {
