@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <aside className="signal-card" aria-label="Engineering profile">
           <div className="signal-header"><span>ENGINEERING_PROFILE</span><i /></div>
-          <p className="code-line"><b>01</b> product-minded backend engineer</p>
+          <p className="code-line"><b>01</b> product-minded full stack engineer</p>
           <p className="code-line"><b>02</b> distributed systems + APIs</p>
           <p className="code-line"><b>03</b> cloud delivery + reliability</p>
           <div className="signal-grid">
