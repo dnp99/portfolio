@@ -48,6 +48,8 @@ const projects = [
   },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 function Arrow() {
   return <span aria-hidden="true">{"\u2197"}</span>;
 }
@@ -81,7 +83,7 @@ function ProjectVisual({ slug }: { slug: string }) {
             <span><i style={{ width: "61%" }} /></span>
           </div>
         </div>
-        <div className="capture-pill">+ "coffee five dollars"</div>
+        <div className="capture-pill">{' + "coffee five dollars"'}</div>
       </div>
     );
   }
@@ -106,7 +108,7 @@ export default function Home() {
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </div>
-        <a className="nav-cta" href="/Deep-Patel-Resume.pdf" target="_blank">Resume <Arrow /></a>
+        <a className="nav-cta" href={`${basePath}/Deep-Patel-Resume.pdf`} target="_blank">Resume <Arrow /></a>
       </nav>
 
       <section className="hero" id="top">
