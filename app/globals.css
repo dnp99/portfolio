@@ -85,10 +85,9 @@ h1 em, h2 em { color: var(--orange); font-weight: 500; }
 .project-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 24px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
 .project-links a { border-bottom: 1px solid var(--ink); padding-bottom: 5px; transition: opacity .2s ease; }
 
-.route-visual, .sprout-visual, .auction-visual { margin: clamp(28px, 4vw, 58px); padding: 28px; align-self: stretch; position: relative; overflow: hidden; border: 1px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
+.route-visual, .sprout-visual { margin: clamp(28px, 4vw, 58px); padding: 28px; align-self: stretch; position: relative; overflow: hidden; border: 1px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
 .route-visual { background: var(--blue); }
 .sprout-visual { background: var(--mint); }
-.auction-visual { background: #ffb99e; }
 .visual-topline { display: flex; justify-content: space-between; text-transform: uppercase; font: 10px/1 var(--mono); letter-spacing: .08em; padding-bottom: 16px; border-bottom: 1px solid rgba(17,17,15,.25); }
 .visual-topline b { color: #4e4c46; }
 .route-map { height: 330px; position: relative; background-image: linear-gradient(rgba(17,17,15,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(17,17,15,.08) 1px, transparent 1px); background-size: 36px 36px; }
@@ -109,15 +108,6 @@ h1 em, h2 em { color: var(--orange); font-weight: 500; }
 .money-bars span { height: 12px; border: 1px solid var(--ink); padding: 2px; }
 .money-bars i { display: block; height: 100%; background: var(--ink); }
 .capture-pill { display: inline-block; background: var(--ink); color: white; padding: 15px 19px; font: 10px var(--mono); box-shadow: 6px 6px 0 var(--orange); }
-.auction-search { margin: 38px 0 28px; min-height: 52px; border: 1px solid var(--ink); background: var(--paper); padding: 0 15px; display: flex; align-items: center; justify-content: space-between; font: 11px var(--mono); }
-.auction-search em { background: var(--acid); border: 1px solid var(--ink); padding: 6px; font-style: normal; font-weight: 800; }
-.vehicle-row { background: var(--paper); border: 1px solid var(--ink); padding: 16px; display: grid; grid-template-columns: 72px 1fr auto; align-items: center; gap: 15px; margin-top: 15px; }
-.vehicle-row > i { height: 55px; background: var(--ink); position: relative; }
-.vehicle-row > i::after { content: ""; position: absolute; width: 44px; height: 18px; border-radius: 14px 20px 5px 5px; background: var(--orange); left: 14px; top: 21px; }
-.vehicle-row span { display: flex; flex-direction: column; font: 11px/1.5 var(--mono); }
-.vehicle-row small { color: #6f6d66; }
-.vehicle-row strong { font: 500 20px var(--display); }
-
 .practice-section, .experience-section { padding: 120px clamp(22px, 5vw, 76px); }
 .practice-section { background: var(--paper-2); }
 .section-heading.compact { grid-template-columns: .8fr 2.3fr; }
@@ -159,7 +149,7 @@ footer { margin-top: auto; padding-top: 100px; display: flex; justify-content: s
   .section-heading > p:last-child { margin-top: 8px; }
   .project { grid-template-columns: 1fr; }
   .project-copy { min-height: 520px; }
-  .route-visual, .sprout-visual, .auction-visual { min-height: 480px; }
+  .route-visual, .sprout-visual { min-height: 480px; }
 }
 
 @media (max-width: 680px) {
@@ -177,11 +167,9 @@ footer { margin-top: auto; padding-top: 100px; display: flex; justify-content: s
   .section-heading h2 { font-size: 52px; }
   .project-copy { min-height: 560px; padding: 34px 25px; }
   .project h3 { margin-top: 34px; font-size: 60px; }
-  .route-visual, .sprout-visual, .auction-visual { margin: 18px; padding: 18px; min-height: 390px; box-shadow: 6px 6px 0 var(--ink); }
+  .route-visual, .sprout-visual { margin: 18px; padding: 18px; min-height: 390px; box-shadow: 6px 6px 0 var(--ink); }
   .route-map { height: 270px; }
   .money-layout { min-height: 250px; grid-template-columns: 1fr .55fr; }
-  .vehicle-row { grid-template-columns: 54px 1fr; }
-  .vehicle-row strong { grid-column: 2; }
   .practice-grid { grid-template-columns: 1fr; }
   .practice-grid article { min-height: 220px; padding: 34px 0; }
   .practice-grid article + article { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }

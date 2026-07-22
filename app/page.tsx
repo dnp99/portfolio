@@ -30,22 +30,6 @@ const projects = [
     code: "https://github.com/dnp99/sprout",
     live: "https://www.sprout-money.ca",
   },
-  {
-    index: "03",
-    slug: "the-block",
-    name: "The Block",
-    type: "AI-first vehicle auction experience",
-    description:
-      "A bilingual buyer journey for 200 vehicles, from natural-language discovery through a validated, persistent bidding flow.",
-    proof: [
-      "Grounded AI condition summaries",
-      "English + French interface",
-      "161 Vitest tests",
-    ],
-    stack: "Next.js / React / Claude / next-intl",
-    code: "https://github.com/dnp99/the-block",
-    live: "https://the-block-virid.vercel.app",
-  },
 ];
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -71,29 +55,18 @@ function ProjectVisual({ slug }: { slug: string }) {
     );
   }
 
-  if (slug === "sprout") {
-    return (
-      <div className="sprout-visual" aria-hidden="true">
-        <div className="visual-topline"><span>July budget</span><b>On track</b></div>
-        <div className="money-layout">
-          <div className="money-ring"><strong>$842</strong><span>safe to spend</span></div>
-          <div className="money-bars">
-            <span><i style={{ width: "72%" }} /></span>
-            <span><i style={{ width: "46%" }} /></span>
-            <span><i style={{ width: "61%" }} /></span>
-          </div>
-        </div>
-        <div className="capture-pill">{' + "coffee five dollars"'}</div>
-      </div>
-    );
-  }
-
   return (
-    <div className="auction-visual" aria-hidden="true">
-      <div className="visual-topline"><span>Live auction</span><b>200 vehicles</b></div>
-      <div className="auction-search">AWD SUV under $20k in Ontario <em>AI</em></div>
-      <div className="vehicle-row"><i /><span><b>2022 Forester</b><small>Clean title · Ontario</small></span><strong>$18,400</strong></div>
-      <div className="vehicle-row"><i /><span><b>2021 CR-V</b><small>4 bids · 08:42 left</small></span><strong>$19,200</strong></div>
+    <div className="sprout-visual" aria-hidden="true">
+      <div className="visual-topline"><span>July budget</span><b>On track</b></div>
+      <div className="money-layout">
+        <div className="money-ring"><strong>$842</strong><span>safe to spend</span></div>
+        <div className="money-bars">
+          <span><i style={{ width: "72%" }} /></span>
+          <span><i style={{ width: "46%" }} /></span>
+          <span><i style={{ width: "61%" }} /></span>
+        </div>
+      </div>
+      <div className="capture-pill">{' + "coffee five dollars"'}</div>
     </div>
   );
 }
@@ -147,7 +120,7 @@ export default function Home() {
         <div className="section-heading">
           <p className="eyebrow"><span /> Selected work</p>
           <h2>Products with<br /><em>something at stake.</em></h2>
-          <p>Personal projects that explore scheduling, money, and marketplaces through the lens of reliable engineering.</p>
+          <p>Personal projects that explore scheduling and money through the lens of reliable engineering.</p>
         </div>
         <div className="projects">
           {projects.map((project) => (

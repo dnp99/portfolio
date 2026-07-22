@@ -11,9 +11,6 @@ distributed systems, cloud infrastructure, and dependable product delivery.
   PHI-safe client architecture.
 - **Sprout** - personal budgeting with natural-language expense capture and
   duplicate-safe imports.
-- **The Block** - bilingual vehicle auction experience with grounded AI search
-  and condition summaries.
-
 ## Technology
 
 - Next.js 16 and React 19
