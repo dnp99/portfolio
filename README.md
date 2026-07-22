@@ -36,6 +36,42 @@ npm run build
 The exported site is written to `out/` and uses `/portfolio` as its production
 base path.
 
+## Editing Content
+
+Projects, contact links, and the resume filename are all configured in
+[`content/portfolio.ts`](content/portfolio.ts).
+
+### Add or Edit a Project
+
+Edit the `projects` array. Project numbering is generated from the array order,
+so no manual renumbering is needed. A project looks like this:
+
+```ts
+{
+  slug: "project-name",
+  name: "Project Name",
+  type: "Short project category",
+  description: "What the product does and why it matters.",
+  proof: ["Outcome one", "Outcome two", "Outcome three"],
+  stack: "React / TypeScript / Postgres",
+  links: [
+    { label: "Live product", href: "https://example.com" },
+    { label: "View source", href: "https://github.com/dnp99/example" },
+  ],
+  visual: "generic",
+}
+```
+
+Available visuals are `"route"`, `"budget"`, and `"generic"`. Omit `visual`
+to use the generic design. Remove a project by deleting its object from the
+array.
+
+### Replace the Resume
+
+Place the new PDF in `public/`, then update `resume.fileName` in
+`content/portfolio.ts`. Keeping the filename `Deep-Patel-Resume.pdf` means you
+can simply replace the existing PDF without changing code.
+
 ## Deployment
 
 Pushes to `main` automatically build and deploy through
