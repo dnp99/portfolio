@@ -101,14 +101,19 @@ export default function Home() {
           <h2>Production is<br /><em>the real test.</em></h2>
         </div>
         <div className="timeline">
-          <article>
-            <div className="timeline-meta"><span>2021 - Present</span><b>Openlane Inc.</b></div>
-            <div><h3>Senior Software Engineer</h3><p>Building high-scale automotive marketplace systems across Java, Spring Boot, React, .NET, and cloud infrastructure.</p><ul><li>Designed and deployed 5+ microservices</li><li>Cut deployments from hours to minutes</li><li>Built APIs serving datasets of 10K-100K+ records</li></ul></div>
-          </article>
-          <article>
-            <div className="timeline-meta"><span>2019 - 2021</span><b>Performance Auto Group</b></div>
-            <div><h3>Software Developer</h3><p>Replaced manual operational workflows with web products, Spring Boot services, relational data models, and real-time React dashboards.</p><ul><li>Saved 300+ hours of manual work annually</li><li>Delivered scalable internal tools end to end</li></ul></div>
-          </article>
+          {portfolio.experience.map((experience) => (
+            <article key={`${experience.company}-${experience.role}`}>
+              <div className="timeline-meta"><span>{experience.period}</span><b>{experience.company}</b></div>
+              <div className="timeline-detail">
+                <h3>{experience.role}</h3>
+                <p>{experience.summary}</p>
+                <h4>Selected impact</h4>
+                <ul>
+                  {experience.achievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
+                </ul>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -133,8 +133,10 @@ h1 em, h2 em { color: var(--orange); font-weight: 500; }
 .timeline-meta b { text-transform: uppercase; letter-spacing: .09em; }
 .timeline h3 { font: 500 36px/1 var(--display); margin: 0 0 18px; }
 .timeline p { max-width: 800px; font-size: 15px; line-height: 1.7; color: #5c5a54; }
-.timeline ul { display: flex; flex-wrap: wrap; gap: 9px; list-style: none; padding: 0; margin: 24px 0 0; }
-.timeline li { border: 1px solid var(--ink); padding: 9px 11px; font: 9px var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+.timeline h4 { margin: 30px 0 13px; color: var(--orange); font: 700 9px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+.timeline ul { display: grid; gap: 0; list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.timeline li { position: relative; max-width: 920px; padding: 13px 14px 13px 28px; border-bottom: 1px solid var(--line); font: 11px/1.55 var(--mono); }
+.timeline li::before { content: "+"; position: absolute; left: 3px; color: var(--orange); font-weight: 800; }
 
 .contact-section { min-height: 88vh; background: var(--orange); color: var(--ink); padding: 120px clamp(22px, 5vw, 76px) 30px; display: flex; flex-direction: column; }
 .contact-section .eyebrow > span { background: var(--ink); }
@@ -184,7 +186,7 @@ footer { margin-top: auto; padding-top: 100px; display: flex; justify-content: s
   .practice-grid article + article { border-left: 0; border-top: 1px solid var(--line); padding-left: 0; }
   .practice-grid h3 { margin-top: 35px; }
   .timeline article { grid-template-columns: 1fr; }
-  .timeline ul { display: grid; }
+  .timeline li { padding-right: 0; }
   .contact-section { min-height: 100vh; }
   .contact-section h2 { font-size: 60px; }
   footer { flex-direction: column; gap: 12px; padding-top: 80px; }

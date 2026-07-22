@@ -38,7 +38,7 @@ base path.
 
 ## Editing Content
 
-Projects, contact links, and the resume filename are all configured in
+Projects, experience, contact links, and the resume filename are all configured in
 [`content/portfolio.ts`](content/portfolio.ts).
 
 ### Add or Edit a Project
@@ -65,6 +65,12 @@ so no manual renumbering is needed. A project looks like this:
 Available visuals are `"route"`, `"budget"`, and `"generic"`. Omit `visual`
 to use the generic design. Remove a project by deleting its object from the
 array.
+
+### Update Experience
+
+Edit the `experience` array to update roles and achievements. Each role has a
+summary and an `achievements` list; keep the strongest measurable outcomes near
+the top.
 
 ### Replace the Resume
 
