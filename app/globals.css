@@ -9,9 +9,9 @@
   --mint: #bfe7d0;
   --blue: #b8d9f2;
   --line: rgba(17, 17, 15, 0.18);
-  --display: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
-  --sans: "Avenir Next", "Avenir", "Futura", sans-serif;
-  --mono: "SFMono-Regular", "SF Mono", "Roboto Mono", monospace;
+  --display: var(--font-archivo), sans-serif;
+  --sans: var(--font-work-sans), sans-serif;
+  --mono: var(--font-jetbrains-mono), monospace;
 }
 
 * { box-sizing: border-box; }

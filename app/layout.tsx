@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
+import { Archivo, JetBrains_Mono, Work_Sans } from "next/font/google";
 import "./globals.css";
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+});
+
+const workSans = Work_Sans({
+  subsets: ["latin"],
+  variable: "--font-work-sans",
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
 
 const siteUrl = "https://dnp99.github.io/portfolio";
 
@@ -32,7 +48,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html
+      className={`${archivo.variable} ${workSans.variable} ${jetBrainsMono.variable}`}
+      lang="en"
+    >
       <body>{children}</body>
     </html>
   );
