@@ -38,7 +38,7 @@ base path.
 
 ## Editing Content
 
-Projects, experience, contact links, and the resume filename are all configured in
+Profile copy, projects, experience, contact links, and the resume filename are all configured in
 [`content/portfolio.ts`](content/portfolio.ts).
 
 ### Add or Edit a Project
@@ -75,8 +75,8 @@ deleting its object from the array.
 ### Update Experience
 
 Edit the `experience` array to update roles and achievements. Each role has a
-summary and an `achievements` list; keep the strongest measurable outcomes near
-the top.
+summary, an `achievements` list, and a `technologies` list; keep the strongest
+measurable outcomes near the top.
 
 ### Replace the Resume
 

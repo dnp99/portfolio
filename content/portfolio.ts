@@ -29,9 +29,18 @@ export interface PortfolioExperience {
   role: string;
   summary: string;
   achievements: string[];
+  technologies: string[];
 }
 
 interface PortfolioContent {
+  profile: {
+    name: string;
+    role: string;
+    location: string;
+    headline: string;
+    about: string[];
+    availability: string;
+  };
   resume: {
     label: string;
     fileName: string;
@@ -47,6 +56,19 @@ interface PortfolioContent {
 }
 
 export const portfolio: PortfolioContent = {
+  profile: {
+    name: "Deep Patel",
+    role: "Senior Software Engineer",
+    location: "Toronto, Canada",
+    headline:
+      "I build dependable systems and thoughtful products for complex, real-world workflows.",
+    about: [
+      "I’m a product-minded full stack engineer who works across backend systems, cloud infrastructure, and polished user experiences. I’m most useful when a problem has real constraints, ambiguous edges, and an outcome people need to trust.",
+      "At Openlane, I build and own high-scale automotive marketplace systems, from Java and Spring Boot microservices to React interfaces, integrations, and deployment infrastructure.",
+      "Outside of work, I build focused products like Routefy and Sprout to explore healthcare scheduling, route optimization, and personal finance through the lens of reliable engineering.",
+    ],
+    availability: "Open to senior engineering roles",
+  },
   resume: {
     label: "Resume",
     fileName: "Deep-Patel-Resume.pdf",
@@ -121,6 +143,14 @@ export const portfolio: PortfolioContent = {
         "Built search and bid-history APIs handling datasets of 10K-100K+ records while improving performance and reducing UAT defects",
         "Delivered the Carfax RIMS integration across React, .NET, authentication, and infrastructure",
       ],
+      technologies: [
+        "Java",
+        "Spring Boot",
+        "React",
+        ".NET",
+        "Terraform",
+        "Azure",
+      ],
     },
     {
       period: "2019 - 2021",
@@ -132,6 +162,7 @@ export const portfolio: PortfolioContent = {
         "Saved 300+ hours of manual work annually",
         "Delivered scalable internal tools end to end",
       ],
+      technologies: ["Java", "Spring Boot", "React", "PostgreSQL"],
     },
   ],
 };
