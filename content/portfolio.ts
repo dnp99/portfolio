@@ -5,6 +5,12 @@ export interface ProjectLink {
   href: string;
 }
 
+export interface ProjectScreenshot {
+  src: string;
+  alt: string;
+  position?: string;
+}
+
 export interface PortfolioProject {
   slug: string;
   name: string;
@@ -13,6 +19,7 @@ export interface PortfolioProject {
   proof: string[];
   stack: string;
   links: ProjectLink[];
+  screenshot?: ProjectScreenshot;
   visual?: ProjectVisualStyle;
 }
 
@@ -71,6 +78,10 @@ export const portfolio: PortfolioContent = {
           href: "https://github.com/dnp99/smart-route-planning",
         },
       ],
+      screenshot: {
+        src: "/projects/routefy-overview.png",
+        alt: "Routefy route planner showing an anonymized visit timeline and optimized route map",
+      },
       visual: "route",
     },
     {
@@ -89,6 +100,10 @@ export const portfolio: PortfolioContent = {
         { label: "Live product", href: "https://www.sprout-money.ca" },
         { label: "View source", href: "https://github.com/dnp99/sprout" },
       ],
+      screenshot: {
+        src: "/projects/sprout-overview.png",
+        alt: "Sprout budgeting overview showing safe-to-spend guidance and recent transactions",
+      },
       visual: "budget",
     },
   ],

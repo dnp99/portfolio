@@ -85,6 +85,19 @@ h1 em, h2 em { color: var(--orange); font-weight: 500; }
 .project-links { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 24px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
 .project-links a { border-bottom: 1px solid var(--ink); padding-bottom: 5px; transition: opacity .2s ease; }
 
+.project-screenshot {
+  width: calc(100% - clamp(56px, 8vw, 116px));
+  aspect-ratio: 16 / 10;
+  margin: clamp(28px, 4vw, 58px);
+  align-self: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--ink);
+  background: #f8f9fb;
+  box-shadow: 10px 10px 0 var(--ink);
+}
+.project-screenshot img { object-fit: cover; }
+
 .route-visual, .sprout-visual, .generic-visual { margin: clamp(28px, 4vw, 58px); padding: 28px; align-self: stretch; position: relative; overflow: hidden; border: 1px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); }
 .route-visual { background: var(--blue); }
 .sprout-visual { background: var(--mint); }
@@ -175,6 +188,7 @@ footer { margin-top: auto; padding-top: 100px; display: flex; justify-content: s
   .section-heading h2 { font-size: 52px; }
   .project-copy { min-height: 560px; padding: 34px 25px; }
   .project h3 { margin-top: 34px; font-size: 60px; }
+  .project-screenshot { width: calc(100% - 36px); margin: 18px; box-shadow: 6px 6px 0 var(--ink); }
   .route-visual, .sprout-visual, .generic-visual { margin: 18px; padding: 18px; min-height: 390px; box-shadow: 6px 6px 0 var(--ink); }
   .route-map { height: 270px; }
   .money-layout { min-height: 250px; grid-template-columns: 1fr .55fr; }

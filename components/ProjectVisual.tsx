@@ -1,6 +1,24 @@
+import Image from "next/image";
+
 import type { PortfolioProject } from "../content/portfolio";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function ProjectVisual({ project }: { project: PortfolioProject }) {
+  if (project.screenshot) {
+    return (
+      <figure className="project-screenshot">
+        <Image
+          src={`${basePath}${project.screenshot.src}`}
+          alt={project.screenshot.alt}
+          fill
+          sizes="(max-width: 960px) calc(100vw - 80px), 52vw"
+          style={{ objectPosition: project.screenshot.position ?? "center" }}
+        />
+      </figure>
+    );
+  }
+
   if (project.visual === "route") {
     return (
       <div className="route-visual" aria-hidden="true">

@@ -58,13 +58,19 @@ so no manual renumbering is needed. A project looks like this:
     { label: "Live product", href: "https://example.com" },
     { label: "View source", href: "https://github.com/dnp99/example" },
   ],
+  screenshot: {
+    src: "/projects/project-name.png",
+    alt: "A concise description of the product screen",
+  },
   visual: "generic",
 }
 ```
 
-Available visuals are `"route"`, `"budget"`, and `"generic"`. Omit `visual`
-to use the generic design. Remove a project by deleting its object from the
-array.
+Store project screenshots in `public/projects/`. The optional `position`
+property accepts any CSS `object-position` value when a screenshot needs a
+different crop. Available fallback visuals are `"route"`, `"budget"`, and
+`"generic"`; they are used when `screenshot` is omitted. Remove a project by
+deleting its object from the array.
 
 ### Update Experience
 
