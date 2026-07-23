@@ -57,7 +57,7 @@ export default function Home() {
       <section className="experience-section" id="experience">
         <div className="section-heading compact">
           <p className="eyebrow"><span /> Experience</p>
-          <h2>Production is<br /><em>the real test.</em></h2>
+          <h2>Engineering with<br /><em>measurable impact.</em></h2>
         </div>
         <div className="timeline">
           {portfolio.experience.map((experience) => (
