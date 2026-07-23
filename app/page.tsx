@@ -15,8 +15,8 @@ export default function Home() {
       <nav className="site-nav" aria-label="Primary navigation">
         <a className="wordmark" href="#top" aria-label="Deep Patel, home">DP<span>.</span></a>
         <div className="nav-links">
-          <a href="#work">Work</a>
           <a href="#experience">Experience</a>
+          <a href="#work">Work</a>
           <a href="#contact">Contact</a>
         </div>
         <a className="nav-cta" href={resumeHref} target="_blank">{portfolio.resume.label} <Arrow /></a>
@@ -31,7 +31,7 @@ export default function Home() {
             I turn complex constraints into software people can trust.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#work">Explore selected work <span>&darr;</span></a>
+            <a className="button button-primary" href="#experience">Explore experience <span>&darr;</span></a>
             <a className="text-link" href={`mailto:${portfolio.contact.email}`}>{portfolio.contact.email} <Arrow /></a>
           </div>
         </div>
@@ -51,6 +51,28 @@ export default function Home() {
           <div><strong>5+</strong><span>years building<br />production systems</span></div>
           <div><strong>20-30%</strong><span>fewer incidents<br />through stabilization</span></div>
           <div><strong>300+</strong><span>hours saved yearly<br />through automation</span></div>
+        </div>
+      </section>
+
+      <section className="experience-section" id="experience">
+        <div className="section-heading compact">
+          <p className="eyebrow"><span /> Experience</p>
+          <h2>Production is<br /><em>the real test.</em></h2>
+        </div>
+        <div className="timeline">
+          {portfolio.experience.map((experience) => (
+            <article key={`${experience.company}-${experience.role}`}>
+              <div className="timeline-meta"><span>{experience.period}</span><b>{experience.company}</b></div>
+              <div className="timeline-detail">
+                <h3>{experience.role}</h3>
+                <p>{experience.summary}</p>
+                <h4>Selected impact</h4>
+                <ul>
+                  {experience.achievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
+                </ul>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -92,28 +114,6 @@ export default function Home() {
           <article><span>01</span><h3>Own the outcome</h3><p>I take features from design and architecture through production, observation, and iteration.</p></article>
           <article><span>02</span><h3>Design for failure</h3><p>Validation, graceful degradation, safe data boundaries, and operational clarity are part of the product.</p></article>
           <article><span>03</span><h3>Make complexity legible</h3><p>I turn domain constraints into focused interfaces and maintainable systems teams can extend.</p></article>
-        </div>
-      </section>
-
-      <section className="experience-section" id="experience">
-        <div className="section-heading compact">
-          <p className="eyebrow"><span /> Experience</p>
-          <h2>Production is<br /><em>the real test.</em></h2>
-        </div>
-        <div className="timeline">
-          {portfolio.experience.map((experience) => (
-            <article key={`${experience.company}-${experience.role}`}>
-              <div className="timeline-meta"><span>{experience.period}</span><b>{experience.company}</b></div>
-              <div className="timeline-detail">
-                <h3>{experience.role}</h3>
-                <p>{experience.summary}</p>
-                <h4>Selected impact</h4>
-                <ul>
-                  {experience.achievements.map((achievement) => <li key={achievement}>{achievement}</li>)}
-                </ul>
-              </div>
-            </article>
-          ))}
         </div>
       </section>
 
