@@ -23,6 +23,7 @@ export interface PortfolioProject {
   links: ProjectLink[];
   screenshot?: ProjectScreenshot;
   screenshots?: ProjectScreenshot[];
+  darkScreenshots?: ProjectScreenshot[];
   visual?: ProjectVisualStyle;
 }
 
@@ -197,6 +198,44 @@ export const portfolio: PortfolioContent = {
           alt: "Sprout account settings screen showing profile, appearance, integrations, and categorization rules",
           width: 2922,
           height: 1464,
+        },
+      ],
+      darkScreenshots: [
+        {
+          src: "/projects/sprout-overview-dark.png",
+          alt: "Sprout dark-mode budgeting overview showing safe-to-spend guidance and recent transactions",
+          width: 2912,
+          height: 1458,
+        },
+        {
+          src: "/projects/sprout-transactions-dark.png",
+          alt: "Sprout dark-mode transactions screen showing categorized merchants, dates, and amounts",
+          width: 2918,
+          height: 1458,
+        },
+        {
+          src: "/projects/sprout-budget-dark.png",
+          alt: "Sprout dark-mode budget screen showing monthly allocation, spending, and category progress",
+          width: 2894,
+          height: 1472,
+        },
+        {
+          src: "/projects/sprout-trends-dark.png",
+          alt: "Sprout dark-mode trends screen showing cash flow, savings rate, income, and expenses",
+          width: 2908,
+          height: 1472,
+        },
+        {
+          src: "/projects/sprout-import-export-dark.png",
+          alt: "Sprout dark-mode import and export screen showing CSV upload and transaction mapping workflow",
+          width: 2904,
+          height: 1476,
+        },
+        {
+          src: "/projects/sprout-settings-dark.png",
+          alt: "Sprout dark-mode account settings screen showing profile, appearance, integrations, and categorization rules",
+          width: 2908,
+          height: 1472,
         },
       ],
       visual: "budget",

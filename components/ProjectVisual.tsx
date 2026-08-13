@@ -14,12 +14,27 @@ function ProjectCarousel({ project }: { project: PortfolioProject }) {
     : project.screenshot
       ? [project.screenshot]
       : [];
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    const updateTheme = () => {
+      setIsDarkTheme(document.documentElement.dataset.theme !== "light");
+      setActiveIndex(0);
+    };
+    updateTheme();
+    window.addEventListener("themechange", updateTheme);
+    return () => window.removeEventListener("themechange", updateTheme);
+  }, []);
+
+  const themeSlides = isDarkTheme && project.darkScreenshots?.length
+    ? project.darkScreenshots
+    : slides;
+
   const move = (direction: 1 | -1) => {
-    setActiveIndex((index) => (index + direction + slides.length) % slides.length);
+    setActiveIndex((index) => (index + direction + themeSlides.length) % themeSlides.length);
   };
 
   useEffect(() => {
@@ -28,10 +43,10 @@ function ProjectCarousel({ project }: { project: PortfolioProject }) {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setIsOpen(false);
       if (event.key === "ArrowLeft") {
-        setActiveIndex((index) => (index - 1 + slides.length) % slides.length);
+        setActiveIndex((index) => (index - 1 + themeSlides.length) % themeSlides.length);
       }
       if (event.key === "ArrowRight") {
-        setActiveIndex((index) => (index + 1) % slides.length);
+        setActiveIndex((index) => (index + 1) % themeSlides.length);
       }
     };
 
@@ -41,9 +56,9 @@ function ProjectCarousel({ project }: { project: PortfolioProject }) {
       document.body.style.overflow = "";
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [isOpen, slides.length]);
+  }, [isOpen, slides.length, themeSlides.length]);
 
-  if (!slides.length) return null;
+  if (!themeSlides.length) return null;
 
   return (
     <>
@@ -55,13 +70,13 @@ function ProjectCarousel({ project }: { project: PortfolioProject }) {
           aria-label={`Open ${project.name} screenshots`}
         >
           <Image
-            src={`${basePath}${slides[activeIndex].src}`}
-            alt={slides[activeIndex].alt}
-            width={slides[activeIndex].width ?? 1600}
-            height={slides[activeIndex].height ?? 900}
+            src={`${basePath}${themeSlides[0].src}`}
+            alt={themeSlides[0].alt}
+            width={themeSlides[0].width ?? 1600}
+            height={themeSlides[0].height ?? 900}
             className="project-thumbnail-image"
             sizes="(max-width: 960px) calc(100vw - 80px), 52vw"
-            style={{ objectPosition: slides[activeIndex].position ?? "center" }}
+            style={{ objectPosition: themeSlides[0].position ?? "center" }}
             priority
           />
           <span className="thumbnail-overlay">View screenshots <span aria-hidden="true">↗</span></span>
@@ -72,13 +87,7 @@ function ProjectCarousel({ project }: { project: PortfolioProject }) {
         <div className="gallery-modal" role="dialog" aria-modal="true" aria-label={`${project.name} screenshots`}>
           <button className="gallery-backdrop" type="button" onClick={() => setIsOpen(false)} aria-label="Close gallery" />
           <div className="gallery-panel">
-            <div className="gallery-header">
-              <div>
-                <p className="gallery-kicker">{project.type}</p>
-                <h4>{project.name} product screens</h4>
-              </div>
-              <button className="gallery-close" type="button" onClick={() => setIsOpen(false)} aria-label="Close gallery">×</button>
-            </div>
+            <button className="gallery-close" type="button" onClick={() => setIsOpen(false)} aria-label="Close gallery">×</button>
             <div
               className="gallery-stage"
               onTouchStart={(event) => setTouchStart(event.changedTouches[0].clientX)}
@@ -90,35 +99,21 @@ function ProjectCarousel({ project }: { project: PortfolioProject }) {
               }}
             >
               <Image
-                src={`${basePath}${slides[activeIndex].src}`}
-                alt={slides[activeIndex].alt}
-                width={slides[activeIndex].width ?? 1600}
-                height={slides[activeIndex].height ?? 900}
+                src={`${basePath}${themeSlides[activeIndex].src}`}
+                alt={themeSlides[activeIndex].alt}
+                width={themeSlides[activeIndex].width ?? 1600}
+                height={themeSlides[activeIndex].height ?? 900}
                 className="gallery-main-image"
                 sizes="90vw"
-                style={{ objectFit: "contain", objectPosition: slides[activeIndex].position ?? "center" }}
+                style={{ objectFit: "contain", objectPosition: themeSlides[activeIndex].position ?? "center" }}
               />
-              {slides.length > 1 && (
+              {themeSlides.length > 1 && (
                 <>
                   <button className="gallery-arrow gallery-arrow-prev" type="button" onClick={() => move(-1)} aria-label="Previous screenshot">←</button>
                   <button className="gallery-arrow gallery-arrow-next" type="button" onClick={() => move(1)} aria-label="Next screenshot">→</button>
                 </>
               )}
-              <span className="gallery-count">{activeIndex + 1} / {slides.length}</span>
-            </div>
-            <div className="gallery-thumbnails" aria-label="Choose screenshot">
-              {slides.map((slide, index) => (
-                <button
-                  className={index === activeIndex ? "is-active" : ""}
-                  type="button"
-                  key={slide.src}
-                  onClick={() => setActiveIndex(index)}
-                  aria-label={`Show screenshot ${index + 1}`}
-                  aria-current={index === activeIndex ? "true" : undefined}
-                >
-                  <Image src={`${basePath}${slide.src}`} alt="" width={320} height={180} sizes="120px" />
-                </button>
-              ))}
+              <span className="gallery-count">{activeIndex + 1} / {themeSlides.length}</span>
             </div>
           </div>
         </div>,
