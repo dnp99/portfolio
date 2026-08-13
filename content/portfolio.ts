@@ -8,6 +8,8 @@ export interface ProjectLink {
 export interface ProjectScreenshot {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
   position?: string;
 }
 
@@ -20,6 +22,7 @@ export interface PortfolioProject {
   stack: string;
   links: ProjectLink[];
   screenshot?: ProjectScreenshot;
+  screenshots?: ProjectScreenshot[];
   visual?: ProjectVisualStyle;
 }
 
@@ -92,9 +95,14 @@ export const portfolio: PortfolioContent = {
         "Models recurring schedules and PHI-safe client data boundaries",
         "Persists healthcare scheduling data with PostgreSQL and Drizzle",
         "Produces practical daily routes for real care-worker workflows",
+        "Used by 4-5 live users in real care-planning workflows",
       ],
       stack: "React / TypeScript / Next.js / Postgres",
       links: [
+        {
+          label: "Visit site",
+          href: "https://routefy.ca/",
+        },
         {
           label: "View source",
           href: "https://github.com/dnp99/smart-route-planning",
@@ -104,6 +112,32 @@ export const portfolio: PortfolioContent = {
         src: "/projects/routefy-overview.png",
         alt: "Routefy route planner showing an anonymized visit timeline and optimized route map",
       },
+      screenshots: [
+        {
+          src: "/projects/routefy-overview.png",
+          alt: "Routefy route planner showing an anonymized visit timeline and optimized route map",
+          width: 1770,
+          height: 889,
+        },
+        {
+          src: "/projects/routefy-clients.png",
+          alt: "Routefy clients screen showing active clients, visit windows, durations, and scheduling actions",
+          width: 2900,
+          height: 1614,
+        },
+        {
+          src: "/projects/routefy-planner.png",
+          alt: "Routefy smart route planner showing selected clients ordered into an optimized route",
+          width: 2912,
+          height: 1612,
+        },
+        {
+          src: "/projects/routefy-dashboard.png",
+          alt: "Routefy home dashboard showing onboarding progress, daily operations, and client coverage",
+          width: 2906,
+          height: 1600,
+        },
+      ],
       visual: "route",
     },
     {
@@ -116,16 +150,55 @@ export const portfolio: PortfolioContent = {
         "Natural-language expense capture",
         "Integer-cents money model",
         "AI-assisted CSV categorization",
+        "Used by 4-5 live users for everyday money management",
       ],
       stack: "Next.js / React / Neon / Vitest",
       links: [
-        { label: "Live product", href: "https://www.sprout-money.ca" },
+        { label: "Visit site", href: "https://www.sprout-money.ca/" },
         { label: "View source", href: "https://github.com/dnp99/sprout" },
       ],
       screenshot: {
         src: "/projects/sprout-overview.png",
         alt: "Sprout budgeting overview showing safe-to-spend guidance and recent transactions",
       },
+      screenshots: [
+        {
+          src: "/projects/sprout-overview.png",
+          alt: "Sprout budgeting overview showing safe-to-spend guidance and recent transactions",
+          width: 2914,
+          height: 1450,
+        },
+        {
+          src: "/projects/sprout-transactions.png",
+          alt: "Sprout transactions screen showing categorized merchants, dates, and amounts",
+          width: 2928,
+          height: 1454,
+        },
+        {
+          src: "/projects/sprout-budget.png",
+          alt: "Sprout budget screen showing monthly allocation, spending, and category progress",
+          width: 2940,
+          height: 1440,
+        },
+        {
+          src: "/projects/sprout-trends.png",
+          alt: "Sprout trends screen showing cash flow, savings rate, income, and expenses",
+          width: 2920,
+          height: 1444,
+        },
+        {
+          src: "/projects/sprout-import-export.png",
+          alt: "Sprout import and export screen showing CSV upload and transaction mapping workflow",
+          width: 2916,
+          height: 1460,
+        },
+        {
+          src: "/projects/sprout-settings.png",
+          alt: "Sprout account settings screen showing profile, appearance, integrations, and categorization rules",
+          width: 2922,
+          height: 1464,
+        },
+      ],
       visual: "budget",
     },
   ],

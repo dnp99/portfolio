@@ -51,8 +51,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html
       className={`${archivo.variable} ${workSans.variable} ${jetBrainsMono.variable}`}
       lang="en"
+      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { const saved = localStorage.getItem("portfolio-theme"); document.documentElement.dataset.theme = saved === "light" ? "light" : "dark"; })()`,
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
