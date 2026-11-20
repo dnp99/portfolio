@@ -67,15 +67,15 @@ export const portfolio: PortfolioContent = {
     headline:
       "I build dependable systems and thoughtful products for complex, real-world workflows.",
     about: [
-      "I’m a product-minded full stack engineer who works across backend systems, cloud infrastructure, and polished user experiences. I’m most useful when a problem has real constraints, ambiguous edges, and an outcome people need to trust.",
-      "At Openlane, I build and own high-scale automotive marketplace systems, from Java and Spring Boot microservices to React interfaces, integrations, and deployment infrastructure.",
-      "Outside of work, I build focused products like Routefy and Sprout to explore healthcare scheduling, route optimization, and personal finance through the lens of reliable engineering.",
+      "I’m a senior software engineer with 5+ years of experience delivering full-stack applications and distributed systems using Java, .NET, React, PostgreSQL, and AWS. My work spans API design, cloud infrastructure, production reliability, and end-to-end product delivery.",
+      "At Openlane, I build automotive marketplace systems, from Java and Spring Boot microservices to React interfaces and a full-stack CARFAX integration. I also designed and delivered a SignalR-based solution that refreshes marketplace configuration without hard reloads.",
+      "Outside of work, I build Routefy and Sprout to explore healthcare scheduling, route optimization, and personal finance. In Sprout, I’m developing LLM-assisted natural-language search that maps user requests into structured queries and filters.",
     ],
     availability: "Open to senior engineering roles",
   },
   resume: {
     label: "Resume",
-    fileName: "Deep-Patel-Resume.pdf",
+    fileName: "Deep_Patel_Resume.pdf",
   },
   contact: {
     email: "pateldeep1001@gmail.com",
@@ -83,7 +83,7 @@ export const portfolio: PortfolioContent = {
     github: "https://github.com/dnp99",
   },
   projectsIntro:
-    "Personal projects that explore scheduling and money through the lens of reliable engineering.",
+    "Personal projects exploring scheduling, money management, and LLM-assisted natural-language search.",
   projects: [
     {
       slug: "routefy",
@@ -146,9 +146,11 @@ export const portfolio: PortfolioContent = {
       name: "Sprout",
       type: "Personal finance, without the friction",
       description:
-        "A mobile-first budgeting product with safe-to-spend guidance, duplicate-safe CSV imports, and expense capture from Siri or WhatsApp.",
+        "A personal and group expense-tracking product with transaction categorization, filtering, and interactive spending insights. I’m developing LLM-assisted search that turns natural-language requests into structured queries and filters.",
       proof: [
-        "Natural-language expense capture",
+        "Personal and group expense-tracking workflows",
+        "LLM-assisted natural-language search in development",
+        "Transaction categorization, filtering, and interactive spending insights",
         "Integer-cents money model",
         "AI-assisted CSV categorization",
         "Used by 4-5 live users for everyday money management",
@@ -243,36 +245,41 @@ export const portfolio: PortfolioContent = {
   ],
   experience: [
     {
-      period: "2021 - Present",
+      period: "Jun 2021 - Present",
       company: "Openlane Inc.",
       role: "Senior Software Engineer",
       summary:
-        "Building high-scale automotive marketplace systems across Java, Spring Boot, React, .NET, and cloud infrastructure.",
+        "Owning full-stack automotive marketplace features, distributed services, external integrations, and production reliability across Java, Spring Boot, React, .NET, PostgreSQL, and AWS.",
       achievements: [
-        "Shipped 5+ Java and Spring Boot microservices and owned Watchlist, Lost Tab, and Sold Tab from design through production",
-        "Reduced production incidents by 20-30% through proactive debugging and service stabilization",
-        "Cut deployment time from hours to minutes using Terraform, Azure DevOps, and CI/CD automation",
-        "Built search and bid-history APIs handling datasets of 10K-100K+ records while improving performance and reducing UAT defects",
-        "Delivered the Carfax RIMS integration across React, .NET, authentication, and infrastructure",
+        "Designed and deployed 5+ Java/Spring Boot microservices for auction and inventory management platforms",
+        "Owned Watchlist, Lost Tab, and Sold Tab from design through production, building React interfaces and integrating backend APIs",
+        "Built search and bid-history APIs supporting datasets of 10K-100K+ records, addressing performance bottlenecks and improving reliability",
+        "Delivered a full-stack CARFAX integration using .NET, React, PostgreSQL, and AWS, including external APIs, RSA-encrypted credential storage, and infrastructure configuration",
+        "Designed and delivered a production SignalR solution to refresh marketplace configuration without hard reloads; evaluated alternatives and presented the approach to Product and Engineering",
+        "Built a non-production React micro-frontend proof of concept for marketplace browsing and seller workflows, handling dealership context, session state, navigation, and theme isolation",
+        "Diagnosed and resolved production memory bottlenecks, API performance issues, and recurring service failures",
       ],
       technologies: [
         "Java",
         "Spring Boot",
         "React",
         ".NET",
+        "PostgreSQL",
+        "AWS",
+        "SignalR",
         "Terraform",
-        "Azure",
+        "Azure DevOps",
       ],
     },
     {
-      period: "2019 - 2021",
+      period: "Oct 2019 - Jun 2021",
       company: "Performance Auto Group",
       role: "Software Developer",
       summary:
         "Replaced manual operational workflows with web products, Spring Boot services, relational data models, and real-time React dashboards.",
       achievements: [
         "Saved 300+ hours of manual work annually",
-        "Delivered scalable internal tools end to end",
+        "Developed Spring Boot services and relational data models, with real-time dashboards and React interfaces",
       ],
       technologies: ["Java", "Spring Boot", "React", "PostgreSQL"],
     },

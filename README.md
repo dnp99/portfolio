@@ -81,7 +81,7 @@ measurable outcomes near the top.
 ### Replace the Resume
 
 Place the new PDF in `public/`, then update `resume.fileName` in
-`content/portfolio.ts`. Keeping the filename `Deep-Patel-Resume.pdf` means you
+`content/portfolio.ts`. Keeping the filename `Deep_Patel_Resume.pdf` means you
 can simply replace the existing PDF without changing code.
 
 ## Deployment

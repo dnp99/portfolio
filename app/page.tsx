@@ -93,7 +93,7 @@ export default function Home() {
             </div>
             <div className="impact-grid" aria-label="Career highlights">
               <div><strong>5+</strong><span>years shipping production systems</span></div>
-              <div><strong>20-30%</strong><span>fewer incidents through stabilization</span></div>
+              <div><strong>5+</strong><span>Java / Spring Boot microservices delivered</span></div>
               <div><strong>300+</strong><span>hours saved yearly through automation</span></div>
             </div>
           </section>
